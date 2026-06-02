@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Inspectores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card card-custom p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3>Inspectores (Autoridades) Registrados</h3>
+            <a th:href="@{/panel/registros}" class="btn btn-primary-custom text-white">✚ Registrar Otro</a>
+        </div>
+
+        <table class="table table-hover table-custom mt-3">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Nº Placa</th>
+                <th>Nº Legajo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="autoridad : ${listaAutoridades}">
+                <td th:text="${autoridad.id}"></td>
+                <td th:text="${autoridad.nombres}"></td>
+                <td th:text="${autoridad.apellidos}"></td>
+                <td th:text="${autoridad.numeroPlaca}"></td>
+                <td th:text="${autoridad.numeroLegajo}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="mt-4 text-center">
+            <a th:href="@{/actas/nueva}" class="btn btn-secondary">Ir al Formulario de Nueva Acta</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

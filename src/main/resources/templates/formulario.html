@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Acta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+    <script th:src="@{/js/validaciones.js}"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card card-custom p-4">
+                <h2 class="text-center mb-4">Labrar Nueva Acta</h2>
+                <form th:action="@{/actas/guardar}" th:object="${acta}" method="post" onsubmit="return confirmarGuardado()">
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" class="form-control" th:field="*{fechaEmision}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Hora</label>
+                            <input type="time" class="form-control" th:field="*{horaEmision}" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Fecha de Vencimiento de Pago</label>
+                        <input type="date" class="form-control" th:field="*{fechaVencimientoPago}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Ubicación del Hecho</label>
+                        <input type="text" class="form-control" th:field="*{ubicacionHecho}" placeholder="Ej: Av. San Martín 1200" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <label class="form-label">Conductor</label>
+                            <a th:href="@{/panel/registros}" class="text-decoration-none fw-bold" style="color:#3498db;">✚ Registrar Nuevo</a>
+                        </div>
+                        <select class="form-select" th:field="*{conductor}" required>
+                            <option value="">-- Elija un conductor --</option>
+                            <option th:each="c : ${conductores}" th:value="${c.id}" th:text="${c.nombres + ' ' + c.apellidos}"></option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <label class="form-label">Vehículo</label>
+                            <a th:href="@{/panel/registros}" class="text-decoration-none fw-bold" style="color:#3498db;">✚ Registrar Nuevo</a>
+                        </div>
+                        <select class="form-select" th:field="*{vehiculo}" required>
+                            <option value="">-- Elija un vehículo --</option>
+                            <option th:each="v : ${vehiculos}" th:value="${v.id}" th:text="${'Patente: ' + v.patenteDominio}"></option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <label class="form-label">Inspector / Autoridad</label>
+                            <a th:href="@{/panel/registros}" class="text-decoration-none fw-bold" style="color:#3498db;">✚ Registrar Nuevo</a>
+                        </div>
+                        <select class="form-select" th:field="*{autoridad}" required>
+                            <option value="">-- Elija un inspector --</option>
+                            <option th:each="a : ${autoridades}" th:value="${a.id}" th:text="${a.nombres + ' ' + a.apellidos}"></option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Notas Adicionales</label>
+                        <textarea class="form-control" th:field="*{notasAdicionales}" rows="3" placeholder="Observaciones opcionales..."></textarea>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a th:href="@{/actas}" class="btn btn-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-primary-custom">Guardar Acta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
