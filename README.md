@@ -70,8 +70,6 @@ http://localhost:8080
 <img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/9ded3351-6dc4-40ed-995f-9b770ae17f11" />
 <img width="1263" height="634" alt="image" src="https://github.com/user-attachments/assets/85e94838-5546-42ae-8fe8-e79a241d931f" />
 
-##Aclaracion
-A mi me funciona sin version de lombok en el pom.xml y mi puerto es el 3307.
 ## Autor
 Lucas
 
