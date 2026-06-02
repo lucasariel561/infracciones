@@ -70,7 +70,8 @@ http://localhost:8080
 <img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/9ded3351-6dc4-40ed-995f-9b770ae17f11" />
 <img width="1263" height="634" alt="image" src="https://github.com/user-attachments/assets/85e94838-5546-42ae-8fe8-e79a241d931f" />
 
-##Diagrama de clases inicial
+## Diagrama de clases inicial
+
 <img width="1247" height="791" alt="image" src="https://github.com/user-attachments/assets/a7eef938-1bdc-4045-8d66-b338f424355b" />
 
 ## Autor
